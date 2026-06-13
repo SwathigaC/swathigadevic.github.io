@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swathiga Devi Chandrasekaran · Aerospace Engineer</title>
+<style>
+  :root {
+    --bg: #080c18;
+    --bg2: #0d1226;
+    --card: #111827;
+    --card2: #1a2236;
+    --cyan: #00d4ff;
+    --purple: #7c5cbf;
+    --gold: #f0a500;
+    --text: #d8e4f0;
+    --muted: #7a8da8;
+    --border: rgba(0,212,255,0.15);
+    --glow: 0 0 20px rgba(0,212,255,0.25);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; overflow-x: hidden; }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 3px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 3rem;
+    background: rgba(8,12,24,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-size: 1.1rem; font-weight: 700; color: var(--cyan); letter-spacing: 1px; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--cyan); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    padding: 6rem 2rem 4rem;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,212,255,0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(124,92,191,0.06) 0%, transparent 70%);
+  }
+  .stars { position: absolute; inset: 0; overflow: hidden; }
+  .star {
+    position: absolute; background: white; border-radius: 50%;
+    animation: twinkle var(--d, 3s) ease-in-out infinite alternate;
+  }
+  @keyframes twinkle { from { opacity: 0.1; } to { opacity: 0.9; } }
+
+  .hero-content { position: relative; text-align: center; max-width: 900px; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(0,212,255,0.1); border: 1px solid var(--border);
+    color: var(--cyan); font-size: 0.78rem; letter-spacing: 2px;
+    text-transform: uppercase; padding: 0.4rem 1.2rem; border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+  h1.hero-name {
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 800; line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 50%, #7c5cbf 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; margin-bottom: 1rem;
+  }
+  .hero-title {
+    font-size: clamp(1rem, 2.5vw, 1.4rem); color: var(--muted);
+    font-weight: 400; margin-bottom: 1.5rem; letter-spacing: 0.5px;
+  }
+  .hero-desc {
+    max-width: 680px; margin: 0 auto 2.5rem;
+    font-size: 1rem; color: var(--text); opacity: 0.85; line-height: 1.8;
+  }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.8rem; border-radius: 6px;
+    font-size: 0.9rem; font-weight: 600; text-decoration: none;
+    transition: all 0.25s; cursor: pointer; border: none;
+  }
+  .btn-primary { background: var(--cyan); color: #080c18; }
+  .btn-primary:hover { background: #00f0ff; box-shadow: 0 0 24px rgba(0,212,255,0.5); transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--cyan); border: 1px solid var(--cyan); }
+  .btn-outline:hover { background: rgba(0,212,255,0.1); transform: translateY(-2px); }
+  .btn-purple { background: transparent; color: #a78bfa; border: 1px solid rgba(124,92,191,0.5); }
+  .btn-purple:hover { background: rgba(124,92,191,0.15); transform: translateY(-2px); }
+
+  .hero-stats {
+    display: flex; justify-content: center; flex-wrap: wrap;
+    border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+    background: rgba(17,24,39,0.6); backdrop-filter: blur(10px);
+  }
+  .stat-item {
+    flex: 1; min-width: 140px; padding: 1.2rem 1.5rem; text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-size: 1.8rem; font-weight: 800; color: var(--cyan); display: block; }
+  .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 3.5rem; }
+  .section-tag {
+    display: inline-block; font-size: 0.72rem; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--cyan); margin-bottom: 0.75rem;
+  }
+  h2.section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: white; }
+  .section-line {
+    width: 50px; height: 3px;
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    margin: 0.8rem auto 0; border-radius: 2px;
+  }
+
+  /* ABOUT */
+  #about { background: var(--bg2); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .about-text p { color: var(--text); opacity: 0.88; margin-bottom: 1rem; }
+  .highlight-tag {
+    display: inline-block; background: rgba(0,212,255,0.1); border: 1px solid var(--border);
+    color: var(--cyan); font-size: 0.78rem; padding: 0.25rem 0.75rem; border-radius: 20px;
+    margin: 0.2rem; cursor: default; transition: all 0.2s;
+  }
+  .highlight-tag:hover { background: rgba(0,212,255,0.2); }
+  .highlight-tag.purple { background: rgba(124,92,191,0.1); border-color: rgba(124,92,191,0.3); color: #a78bfa; }
+  .highlight-tag.purple:hover { background: rgba(124,92,191,0.2); }
+  .about-cards { display: flex; flex-direction: column; gap: 1rem; }
+  .about-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.2rem 1.5rem; display: flex; align-items: flex-start; gap: 1rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .about-card:hover { border-color: var(--cyan); transform: translateX(4px); }
+  .about-card .icon { font-size: 1.5rem; flex-shrink: 0; }
+  .about-card h4 { color: white; font-size: 0.9rem; margin-bottom: 0.25rem; }
+  .about-card p { color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+
+  /* EDUCATION */
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .edu-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 2rem; position: relative; overflow: hidden;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .edu-card:hover { border-color: var(--cyan); transform: translateY(-4px); }
+  .edu-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+  }
+  .edu-school { color: var(--cyan); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .edu-degree { color: white; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .edu-meta { color: var(--muted); font-size: 0.82rem; margin-bottom: 0.8rem; }
+  .edu-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(240,165,0,0.12); border: 1px solid rgba(240,165,0,0.3);
+    color: var(--gold); font-size: 0.78rem; padding: 0.3rem 0.8rem; border-radius: 20px;
+  }
+  .gpa-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(0,212,255,0.1); border: 1px solid var(--border);
+    color: var(--cyan); font-size: 0.78rem; padding: 0.3rem 0.8rem; border-radius: 20px;
+    margin-right: 0.5rem;
+  }
+
+  /* EXPERIENCE */
+  #experience { background: var(--bg2); }
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(180deg, var(--cyan), var(--purple), transparent);
+    border-radius: 1px;
+  }
+  .tl-item { position: relative; margin-bottom: 2.5rem; }
+  .tl-dot {
+    position: absolute; left: -2.4rem; top: 0.4rem;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--bg2); border: 2px solid var(--cyan);
+    box-shadow: 0 0 10px rgba(0,212,255,0.4);
+  }
+  .tl-dot.purple { border-color: var(--purple); box-shadow: 0 0 10px rgba(124,92,191,0.4); }
+  .tl-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem 2rem; transition: border-color 0.25s, box-shadow 0.25s;
+  }
+  .tl-card:hover { border-color: var(--cyan); box-shadow: var(--glow); }
+  .tl-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.4rem; }
+  .tl-role { color: white; font-size: 1rem; font-weight: 700; }
+  .tl-date { color: var(--cyan); font-size: 0.78rem; background: rgba(0,212,255,0.1); padding: 0.25rem 0.75rem; border-radius: 20px; white-space: nowrap; }
+  .tl-org { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+  .tl-points { list-style: none; padding: 0; }
+  .tl-points li {
+    position: relative; padding-left: 1.2rem; color: var(--text); opacity: 0.85;
+    font-size: 0.88rem; line-height: 1.7; margin-bottom: 0.4rem;
+  }
+  .tl-points li::before { content: '▸'; position: absolute; left: 0; color: var(--cyan); font-size: 0.75rem; }
+  .skills-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+  .skill-chip {
+    background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.2);
+    color: var(--cyan); font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 12px;
+    letter-spacing: 0.5px;
+  }
+  .skill-chip.purple { background: rgba(124,92,191,0.08); border-color: rgba(124,92,191,0.2); color: #a78bfa; }
+
+  /* PROJECTS */
+  .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .proj-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.8rem; display: flex; flex-direction: column;
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .proj-card:hover { border-color: var(--cyan); transform: translateY(-5px); box-shadow: var(--glow); }
+  .proj-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
+  }
+  .proj-card:hover::after { transform: scaleX(1); }
+  .proj-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .proj-title { color: white; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.4; }
+  .proj-date { color: var(--muted); font-size: 0.75rem; margin-bottom: 0.75rem; }
+  .proj-desc { color: var(--text); opacity: 0.8; font-size: 0.85rem; line-height: 1.65; flex: 1; margin-bottom: 1rem; }
+  .proj-tools { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .tool-chip { background: rgba(124,92,191,0.1); border: 1px solid rgba(124,92,191,0.2); color: #a78bfa; font-size: 0.7rem; padding: 0.18rem 0.55rem; border-radius: 10px; }
+
+  /* PUBLICATIONS */
+  #publications { background: var(--bg2); }
+  .pub-list { display: flex; flex-direction: column; gap: 1.2rem; }
+  .pub-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.4rem 1.8rem; display: flex; gap: 1.2rem; align-items: flex-start;
+    transition: border-color 0.2s;
+  }
+  .pub-card:hover { border-color: var(--cyan); }
+  .pub-num { font-size: 1.5rem; font-weight: 800; color: var(--cyan); opacity: 0.3; flex-shrink: 0; width: 2rem; }
+  .pub-title { color: white; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.4rem; font-style: italic; }
+  .pub-authors { color: var(--muted); font-size: 0.8rem; margin-bottom: 0.3rem; }
+  .pub-venue { color: var(--cyan); font-size: 0.78rem; }
+  .pub-tag {
+    display: inline-block; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase;
+    padding: 0.15rem 0.55rem; border-radius: 10px; margin-left: 0.5rem;
+    background: rgba(0,212,255,0.1); border: 1px solid var(--border); color: var(--cyan);
+  }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .skill-group {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem; transition: border-color 0.25s;
+  }
+  .skill-group:hover { border-color: var(--cyan); }
+  .skill-group-title { color: var(--cyan); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .s-tag {
+    background: rgba(17,24,39,0.8); border: 1px solid rgba(255,255,255,0.08);
+    color: var(--text); font-size: 0.78rem; padding: 0.3rem 0.75rem; border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .s-tag:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(0,212,255,0.08); }
+
+  /* AWARDS */
+  .awards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; }
+  .award-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.4rem 1.6rem; display: flex; gap: 1rem; align-items: flex-start;
+    transition: all 0.25s;
+  }
+  .award-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .award-icon { font-size: 1.6rem; flex-shrink: 0; }
+  .award-title { color: white; font-size: 0.88rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .award-detail { color: var(--muted); font-size: 0.78rem; line-height: 1.5; }
+
+  /* LEADERSHIP */
+  #leadership { background: var(--bg2); }
+  .lead-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .lead-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.6rem; transition: all 0.25s;
+  }
+  .lead-card:hover { border-color: var(--purple); transform: translateY(-4px); }
+  .lead-role { color: white; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem; }
+  .lead-org { color: var(--purple); font-size: 0.8rem; margin-bottom: 0.25rem; }
+  .lead-date { color: var(--muted); font-size: 0.75rem; margin-bottom: 0.75rem; }
+  .lead-desc { color: var(--text); opacity: 0.8; font-size: 0.83rem; line-height: 1.6; }
+
+  /* CERTIFICATIONS */
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .cert-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.2rem 1.5rem; display: flex; gap: 1rem; align-items: flex-start;
+    transition: all 0.2s;
+  }
+  .cert-card:hover { border-color: var(--cyan); }
+  .cert-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .cert-name { color: white; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .cert-issuer { color: var(--muted); font-size: 0.75rem; }
+  .ongoing-badge {
+    display: inline-block; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+    color: #22c55e; font-size: 0.65rem; letter-spacing: 1px; padding: 0.1rem 0.5rem;
+    border-radius: 10px; margin-top: 0.3rem;
+    animation: glow-green 2s ease-in-out infinite;
+  }
+  @keyframes glow-green { 0%,100%{box-shadow:0 0 4px rgba(34,197,94,0.2);} 50%{box-shadow:0 0 10px rgba(34,197,94,0.5);} }
+
+  /* CONTACT */
+  #contact { text-align: center; }
+  .contact-wrapper {
+    max-width: 600px; margin: 0 auto;
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 3rem 2.5rem;
+  }
+  .contact-intro { color: var(--muted); margin-bottom: 2rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem;
+    background: var(--card2); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1rem 1.5rem; text-decoration: none; color: var(--text);
+    transition: all 0.2s;
+  }
+  .contact-link:hover { border-color: var(--cyan); color: var(--cyan); transform: translateX(4px); }
+  .contact-link .c-icon { font-size: 1.2rem; }
+  .contact-link .c-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+  .contact-link .c-val { font-size: 0.9rem; font-weight: 500; }
+
+  footer {
+    text-align: center; padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 0.8rem;
+  }
+  footer span { color: var(--cyan); }
+
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  #scrollTop {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 99;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--cyan); color: var(--bg); font-size: 1.2rem; font-weight: bold;
+    border: none; cursor: pointer; display: none; align-items: center; justify-content: center;
+    box-shadow: 0 0 16px rgba(0,212,255,0.5); transition: transform 0.2s;
+  }
+  #scrollTop:hover { transform: translateY(-3px); }
+  #scrollTop.show { display: flex; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem; }
+    .nav-links { display: none; }
+    .about-grid, .edu-grid { grid-template-columns: 1fr; }
+    .stat-item { min-width: 120px; }
+    .tl-header { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">SDC</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="stars" id="stars"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ Aerospace Engineer &amp; Researcher</div>
+    <h1 class="hero-name">Swathiga Devi<br>Chandrasekaran</h1>
+    <p class="hero-title">MS Aerospace Engineering · Virginia Tech · GPA 3.87/4.00</p>
+    <p class="hero-desc">
+      Fluid dynamics researcher with experimental expertise in cavitation, PIV, CFD, and advanced
+      materials characterization. Bridging aerospace engineering with planetary science —
+      from Earth's fluid flows to questions about life beyond our planet.
+    </p>
+    <div class="hero-btns">
+      <a href="https://linkedin.com/in/swathigadevic" class="btn btn-primary" target="_blank">🔗 LinkedIn</a>
+      <a href="mailto:swathigadevic@vt.edu" class="btn btn-outline">✉ Email Me</a>
+      <a href="https://drive.google.com/file/d/1CTaGNQdPoAA1d14E0Q_d74FNpEUf65t0/view?usp=sharing" class="btn btn-purple" target="_blank">⭐ NASA Recommendation</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">3.87</span>
+        <span class="stat-label">MS GPA / 4.0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Research Publications</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">175+</span>
+        <span class="stat-label">Students Mentored</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">10+</span>
+        <span class="stat-label">Projects &amp; Internships</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">2×</span>
+        <span class="stat-label">APS DFD Presenter</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Who I Am</div>
+      <h2 class="section-title">About Me</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p>
+          I'm an aerospace engineer with deep experimental and computational experience, currently
+          completing my Master's thesis on <strong style="color:var(--cyan)">Effects of Surface Wettability on Cavitation Inception &amp; Cloud Cavitation</strong> at Virginia Tech's CREATe lab.
+        </p>
+        <p>
+          My work sits at the intersection of fluid dynamics, materials science, and data-driven analysis —
+          using tools like PIV, SEM, FTIR, XRD, and machine learning to uncover how physical surfaces
+          govern complex flow behavior.
+        </p>
+        <p>
+          Beyond the lab, I'm drawn to big questions: planetary habitability, astrobiology, and how
+          engineering methods can illuminate the chemistry of life in extreme environments.
+        </p>
+        <div style="margin-top:1.5rem;">
+          <span class="highlight-tag">Fluid Dynamics</span>
+          <span class="highlight-tag">CFD / ANSYS Fluent</span>
+          <span class="highlight-tag">Experimental Research</span>
+          <span class="highlight-tag">PIV</span>
+          <span class="highlight-tag">Machine Learning</span>
+          <span class="highlight-tag purple">Astrobiology</span>
+          <span class="highlight-tag purple">Planetary Science</span>
+          <span class="highlight-tag purple">Space Systems</span>
+          <span class="highlight-tag">Materials Characterization</span>
+          <span class="highlight-tag">Python &amp; MATLAB</span>
+        </div>
+      </div>
+      <div class="about-cards fade-in">
+        <div class="about-card">
+          <div class="icon">🔬</div>
+          <div>
+            <h4>Experimental Researcher</h4>
+            <p>Led cavitation experiments with high-speed imaging, PIV, and multi-technique surface characterization (SEM, profilometry, goniometry) across 10+ surface conditions.</p>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="icon">💻</div>
+          <div>
+            <h4>Computational Engineer</h4>
+            <p>Applied CFD (ANSYS Fluent, STAR-CCM+), Navier-Stokes modeling, FEA, and developed ML models to extract insights from experimental flow data.</p>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="icon">🚀</div>
+          <div>
+            <h4>Space &amp; Aerospace Enthusiast</h4>
+            <p>Experience spanning flight test internships at IIT Kanpur, CubeSat debris mitigation at Brahmastra Aerospace, to NASA GeneLab astrobiology analysis.</p>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="icon">🎓</div>
+          <div>
+            <h4>Educator &amp; Mentor</h4>
+            <p>Mentored 175+ students across aerospace labs, chemistry, and math as GTA and tutor, while earning a Gold Medal and Department Rank in undergrad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Academic Background</div>
+      <h2 class="section-title">Education</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="edu-grid fade-in">
+      <div class="edu-card">
+        <div class="edu-school">Virginia Tech · Blacksburg, VA, USA</div>
+        <div class="edu-degree">Master of Science in Aerospace Engineering</div>
+        <div class="edu-meta">Aug 2023 to May 2026</div>
+        <div style="margin-bottom:0.8rem;">
+          <span class="gpa-badge">⭐ GPA: 3.87 / 4.00</span>
+        </div>
+        <p style="font-size:0.83rem; color:var(--muted); line-height:1.6;">
+          <strong style="color:var(--text);">Thesis:</strong> Effects of Surface Wettability on Cavitation Inception &amp; Cloud Cavitation
+        </p>
+        <div style="margin-top:1rem;">
+          <span class="highlight-tag" style="font-size:0.72rem;">Fluid Dynamics</span>
+          <span class="highlight-tag" style="font-size:0.72rem;">CFD</span>
+          <span class="highlight-tag" style="font-size:0.72rem;">PIV</span>
+          <span class="highlight-tag" style="font-size:0.72rem;">Experimental Methods</span>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-school">Rajalakshmi Engineering College · Chennai, India</div>
+        <div class="edu-degree">Bachelor of Engineering in Aeronautical Engineering</div>
+        <div class="edu-meta">Jul 2019 to May 2023</div>
+        <div style="margin-bottom:0.8rem;">
+          <span class="gpa-badge">⭐ GPA: 9.32 / 10.00</span>
+          <span class="edu-badge">🥇 Gold Medallist</span>
+        </div>
+        <p style="font-size:0.83rem; color:var(--muted); line-height:1.6;">
+          <strong style="color:var(--text);">Thesis:</strong> Static &amp; Modal Analysis of Engine Vibration Brackets using Finite Element Analysis
+        </p>
+        <div style="margin-top:1rem;">
+          <span class="highlight-tag" style="font-size:0.72rem;">Dept. Rank Holder</span>
+          <span class="highlight-tag" style="font-size:0.72rem;">FEA</span>
+          <span class="highlight-tag" style="font-size:0.72rem;">CAD</span>
+          <span class="highlight-tag" style="font-size:0.72rem;">Merit Rank Holder ×2</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Professional History</div>
+      <h2 class="section-title">Research &amp; Work Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline fade-in">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div class="tl-role">Graduate Research Assistant · CREATe Lab</div>
+            <div class="tl-date">Jan 2024 to Present</div>
+          </div>
+          <div class="tl-org">Virginia Tech · Advisor: Dr. Olivier Coutier-Delgosha · Blacksburg, VA</div>
+          <ul class="tl-points">
+            <li>Leads the experimental setup of a cavitation test rig, analyzing cloud cavitation in fluid flows with high-speed imaging across 10+ surface conditions.</li>
+            <li>Designed and 3D-printed advanced test models with varied surface wettability (chemical etching and spray coating) to investigate cavitation inception.</li>
+            <li>Acquired and analyzed 60+ high-speed flow visualization sequences using MATLAB and Python; performed multi-technique surface characterization (SEM, profilometry, goniometry).</li>
+            <li>Developed a RAFT machine learning model to quantify wettability effects on bubble dynamics, revealing that superhydrophilicity mitigates cavitation onset while superhydrophobicity amplifies it.</li>
+            <li>Findings presented at the APS Division of Fluid Dynamics Meeting in both 2024 and 2025; secured 3rd place among 40 teams at Virginia Tech's Technical Poster Competition.</li>
+          </ul>
+          <div class="skills-row">
+            <span class="skill-chip">PIV</span><span class="skill-chip">CFD</span>
+            <span class="skill-chip">MATLAB</span><span class="skill-chip">Python</span>
+            <span class="skill-chip">SEM</span><span class="skill-chip">Machine Learning</span>
+            <span class="skill-chip">High-Speed Imaging</span><span class="skill-chip">Wind Tunnel</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot purple"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div class="tl-role">Graduate Teaching Assistant · Aerospace &amp; Chemistry</div>
+            <div class="tl-date">Jan 2024 to May 2026</div>
+          </div>
+          <div class="tl-org">Kevin T. Crofton Dept. of Aerospace and Ocean Engineering, Virginia Tech</div>
+          <ul class="tl-points">
+            <li>Guided 65+ students through aerospace lab experiments including wind tunnel testing, flow visualization, and static beam analysis; provided individualized technical mentoring.</li>
+            <li>Led Chemistry lab sessions for 70+ students, managing experimental procedures, clarifying scientific concepts, and ensuring lab safety.</li>
+            <li>GTA for Aerospace Project Design &amp; Management: mentored 40+ students on interpersonal skills and collaborative project development.</li>
+          </ul>
+          <div class="skills-row">
+            <span class="skill-chip purple">Teaching</span>
+            <span class="skill-chip purple">Mentoring</span>
+            <span class="skill-chip purple">Lab Safety</span>
+            <span class="skill-chip purple">Technical Communication</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div class="tl-role">Graduate Research Intern · Materials Characterization Laboratory</div>
+            <div class="tl-date">Sep 2024 to Dec 2024</div>
+          </div>
+          <div class="tl-org">Virginia Tech · Lab Research Manager: Dr. Rituraj Borgohain</div>
+          <ul class="tl-points">
+            <li>Performed TGA on surface-treated and composite powder samples to characterize thermal stability and decomposition behavior.</li>
+            <li>Implemented FTIR on functionalized nanoparticles and colloidal suspensions to identify surface functional groups and chemical bonding environments.</li>
+            <li>Conducted XRD on advanced composite fillers to determine phase composition, crystallite size, and lattice parameters in collaboration with partner institutions.</li>
+            <li>Independently adapted to new advanced instrumentation techniques outside primary research area within a single semester.</li>
+          </ul>
+          <div class="skills-row">
+            <span class="skill-chip">TGA</span><span class="skill-chip">FTIR</span>
+            <span class="skill-chip">XRD</span><span class="skill-chip">Profilometry</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div class="tl-role">Mathematics Tutor · Emporium</div>
+            <div class="tl-date">Jan 2024 to Aug 2024</div>
+          </div>
+          <div class="tl-org">Virginia Tech Department of Mathematics</div>
+          <ul class="tl-points">
+            <li>Tutored 30+ freshman and sophomore students in MATH 1225, MATH 1226, and MATH 2114/2115 through one-on-one and group sessions.</li>
+            <li>Enhanced comprehension and confidence in foundational math subjects, strengthening student exam performance and academic success.</li>
+          </ul>
+          <div class="skills-row">
+            <span class="skill-chip purple">Calculus</span>
+            <span class="skill-chip purple">Linear Algebra</span>
+            <span class="skill-chip purple">Tutoring</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div class="tl-role">Undergraduate Research Intern</div>
+            <div class="tl-date">Jan 2023 to Mar 2023</div>
+          </div>
+          <div class="tl-org">National Aerospace Laboratories (NAL) · Bengaluru, India · Principal Scientist: Shri. Vinay C.A.</div>
+          <ul class="tl-points">
+            <li>Examined the static behavior of turboprop engine brackets by quantifying Von-Mises stress, strain, and deformation under varying load conditions.</li>
+            <li>Assessed vibrational characteristics through modal analysis, confirming natural frequencies exceeded the engine's excitation frequency and mitigating fatigue failure risk.</li>
+            <li>Modeled engine mount brackets using CATIA and conducted static and modal analysis using FEA; this work formed the basis of the undergraduate thesis.</li>
+          </ul>
+          <div class="skills-row">
+            <span class="skill-chip">CATIA</span><span class="skill-chip">FEA</span>
+            <span class="skill-chip">ANSYS Fluent</span><span class="skill-chip">Static Analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot purple"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div class="tl-role">Summer Intern · Flight Laboratory</div>
+            <div class="tl-date">Aug 2022 (1 month)</div>
+          </div>
+          <div class="tl-org">Indian Institute of Technology (IIT) Kanpur · India</div>
+          <ul class="tl-points">
+            <li>Executed flight experiments in Cessna 206H, Piper Saratoga, and NAL Hansa aircraft to compute design and performance parameters.</li>
+            <li>Calibrated control surfaces using inclinometers and Data Acquisition systems.</li>
+          </ul>
+          <div class="skills-row">
+            <span class="skill-chip">Flight Testing</span><span class="skill-chip">Data Acquisition</span>
+            <span class="skill-chip">Flight Safety</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot purple"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div class="tl-role">Engineer Intern</div>
+            <div class="tl-date">Nov 2020 to Dec 2020</div>
+          </div>
+          <div class="tl-org">Brahmastra Aerospace Systems</div>
+          <ul class="tl-points">
+            <li>Conducted a literature survey on space debris mitigation methods utilizing 1U CubeSats.</li>
+            <li>Generated the concept of Retractable Dragsails in 1U CubeSats for precise atmospheric reentry, forming the basis of the RE-TRANS project — a passive deorbiting solution for LEO CubeSats.</li>
+          </ul>
+          <div class="skills-row">
+            <span class="skill-chip">Orbital Mechanics</span>
+            <span class="skill-chip">Satellite Systems</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Independent &amp; Academic Work</div>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="proj-grid fade-in">
+
+      <div class="proj-card">
+        <div class="proj-icon">🧬</div>
+        <div class="proj-title">Yeast Growth Dynamics in Earth and Spaceflight Conditions</div>
+        <div class="proj-date">Aug 2025 to Dec 2025 · NASA GeneLab</div>
+        <div class="proj-desc">
+          Used NASA GeneLab yeast deletion-library datasets to explore gene-level fitness differences under ground vs. microgravity. Developed a gravity-sensitivity metric (Δs), conducted genome-wide analysis, and applied time-series growth modeling for astrobiology insights.
+        </div>
+        <div class="proj-tools">
+          <span class="tool-chip">Python</span><span class="tool-chip">MATLAB</span>
+          <span class="tool-chip">Statistical Analysis</span><span class="tool-chip">Data Visualization</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-icon">✈️</div>
+        <div class="proj-title">Comparative Study of Navier-Stokes and Inviscid Methods for Turbulent Flow over NACA Airfoils</div>
+        <div class="proj-date">Jan 2024 to May 2024 · Virginia Tech</div>
+        <div class="proj-desc">
+          Detailed CFD investigation of turbulent airflow over a NACA 4512 airfoil using NS solvers, inviscid models, and boundary layer approximation. Improved prediction accuracy by 8% through systematic benchmarking against commercial CFD tools and literature.
+        </div>
+        <div class="proj-tools">
+          <span class="tool-chip">ANSYS Fluent</span><span class="tool-chip">CFD</span>
+          <span class="tool-chip">Mathematical Modeling</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-icon">🌀</div>
+        <div class="proj-title">Computational Analysis on a Lid-Driven Cavity</div>
+        <div class="proj-date">Nov 2023 to Dec 2023 · Virginia Tech</div>
+        <div class="proj-desc">
+          Performed 2D steady incompressible Navier-Stokes analysis of lid-driven cavity flow. Evaluated two relaxation methods across varying Reynolds numbers and mesh sizes, and benchmarked results against a commercial CFD solver and existing literature.
+        </div>
+        <div class="proj-tools">
+          <span class="tool-chip">MATLAB</span><span class="tool-chip">Tecplot</span>
+          <span class="tool-chip">CFD</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-icon">🛸</div>
+        <div class="proj-title">RE-TRANS: Retractable Dragsails in 1U CubeSats for Debris Mitigation</div>
+        <div class="proj-date">Mar 2022 to Jun 2022 · Brahmastra Aerospace / REC</div>
+        <div class="proj-desc">
+          Passive deorbiting solution for 1U LEO CubeSats using retractable dragsails to enhance aerodynamic drag and leverage Solar Radiation Pressure. Dragsail deploys at End-of-Life and is retracted pre-burn-up for precision reentry.
+        </div>
+        <div class="proj-tools">
+          <span class="tool-chip">Orbital Mechanics</span><span class="tool-chip">Satellite Systems</span>
+          <span class="tool-chip">Space Debris</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-icon">🚁</div>
+        <div class="proj-title">Autonomous Micro UAS for Payload Delivery</div>
+        <div class="proj-date">Feb 2022 to Jul 2022 · Rajalakshmi Engineering College</div>
+        <div class="proj-desc">
+          Designed and optimized a multirotor quadcopter for payload delivery. Performed weight estimation, component selection, rotor simulations, and structural analysis achieving maximum flight endurance of 23 minutes. Fabricated hardware using 3D printing and laser cutting.
+        </div>
+        <div class="proj-tools">
+          <span class="tool-chip">SolidWorks</span><span class="tool-chip">ANSYS</span>
+          <span class="tool-chip">UAV Design</span><span class="tool-chip">CAD</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-icon">🌾</div>
+        <div class="proj-title">Conceptual Design of Agricultural Aircraft (CropDusters)</div>
+        <div class="proj-date">Mar 2022 to Jun 2022 · Rajalakshmi Engineering College</div>
+        <div class="proj-desc">
+          Conceptual design of a cost-effective short-range agricultural aircraft for aerial pesticide and fertilizer application. Conducted literature survey of 14 similar aircraft; performed weight estimation, airfoil selection, and wing/tail configuration optimization.
+        </div>
+        <div class="proj-tools">
+          <span class="tool-chip">Vehicle Design</span><span class="tool-chip">Aerodynamics</span>
+          <span class="tool-chip">Literature Survey</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Scholarly Work</div>
+      <h2 class="section-title">Publications &amp; Presentations</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div style="margin-bottom:1.5rem; color:var(--cyan); font-size:0.8rem; text-transform:uppercase; letter-spacing:2px;" class="fade-in">Research Publications &amp; Presentations</div>
+    <div class="pub-list fade-in">
+      <div class="pub-card">
+        <div class="pub-num">01</div>
+        <div>
+          <div class="pub-title">Effects of Surface Wettability on Cavitation Inception and Cloud Cavitation</div>
+          <div class="pub-authors">Chandrasekaran, S. D., Kethanur Balasubramaniam, Suman, S., &amp; Coutier-Delgosha, O.</div>
+          <div class="pub-venue">APS Division of Fluid Dynamics Meeting, 2025 <span class="pub-tag">Conference</span></div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-num">02</div>
+        <div>
+          <div class="pub-title">Impacts of Surface Roughness on Cavitation Inception and Flow Dynamics</div>
+          <div class="pub-authors">Chandrasekaran, S. D., Kethanur Balasubramaniam, Suman, S., &amp; Coutier-Delgosha, O.</div>
+          <div class="pub-venue">APS Division of Fluid Dynamics Meeting, 2024 <span class="pub-tag">Conference</span></div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-num">03</div>
+        <div>
+          <div class="pub-title">Design and Analysis of a Thermoacoustic Cooling System with Two-Stack Arrangement for Different Types of Stacks</div>
+          <div class="pub-authors">M. Siva Sakthi, C. Swathiga Devi &amp; Surendra Bogadi</div>
+          <div class="pub-venue">Advances in Mechanical Engineering and Material Science (ICAMEMS 2023), Lecture Notes in Mechanical Engineering, pp. 69–84. Springer, Singapore. DOI: 10.1007/978-981-99-5613-5_6 <span class="pub-tag">Springer</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem; margin-bottom:1.5rem; color:var(--purple); font-size:0.8rem; text-transform:uppercase; letter-spacing:2px;" class="fade-in">Other Publications</div>
+    <div class="pub-list fade-in">
+      <div class="pub-card">
+        <div class="pub-num" style="color:var(--purple);">04</div>
+        <div>
+          <div class="pub-title">Space Entrepreneurship: A Comprehensive Guide to Launching a Space Business in India</div>
+          <div class="pub-authors">Lokesh Kumar G, Swathiga Devi Chandrasekaran, et al.</div>
+          <div class="pub-venue">75th International Astronautical Congress (IAC 2024), pp. 633–644. IAF. Milan, Italy. DOI: 10.52202/078383-0059 <span class="pub-tag" style="color:var(--purple);border-color:rgba(124,92,191,0.3);background:rgba(124,92,191,0.1);">IAC 2024</span></div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-num" style="color:var(--purple);">05</div>
+        <div>
+          <div class="pub-title">Three Dimensional, Numerical Investigation of Straight and Choked Reactant Injection in H2/Air Rotating Detonation Engine</div>
+          <div class="pub-authors">Swathiga Devi Chandrasekaran &amp; Vignesh K.</div>
+          <div class="pub-venue">NCRAMS '21 · National Conference on Recent Advances in Mechanical Sciences, Dec 2021 <span class="pub-tag" style="color:var(--gold);border-color:rgba(240,165,0,0.3);background:rgba(240,165,0,0.1);">🏆 Best Paper</span></div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-num" style="color:var(--purple);">06</div>
+        <div>
+          <div class="pub-title">Unlike a Thought</div>
+          <div class="pub-authors">Srushti Panchal, Swathiga Devi Chandrasekaran, et al. (25 authors)</div>
+          <div class="pub-venue">Verses Kindler Publication, Google Play Books, Sep 15, 2021 <span class="pub-tag" style="color:var(--purple);border-color:rgba(124,92,191,0.3);background:rgba(124,92,191,0.1);">Book</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Technical Toolkit</div>
+      <h2 class="section-title">Skills</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid fade-in">
+      <div class="skill-group">
+        <div class="skill-group-title">⌨️ Programming &amp; Data Science</div>
+        <div class="skill-tags">
+          <span class="s-tag">Python</span><span class="s-tag">MATLAB</span>
+          <span class="s-tag">Machine Learning</span><span class="s-tag">RAFT Model</span>
+          <span class="s-tag">Statistical Analysis</span><span class="s-tag">Time-Series Modeling</span>
+          <span class="s-tag">Data Visualization</span><span class="s-tag">LaTeX</span><span class="s-tag">Git</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">🌊 CFD &amp; Simulation</div>
+        <div class="skill-tags">
+          <span class="s-tag">ANSYS Fluent</span><span class="s-tag">STAR-CCM+</span>
+          <span class="s-tag">Navier-Stokes Modeling</span><span class="s-tag">FEA</span>
+          <span class="s-tag">Tecplot</span><span class="s-tag">Vortex Panel Method</span>
+          <span class="s-tag">Numerical Modeling</span><span class="s-tag">DeltaEC</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">🔬 Experimental &amp; Characterization</div>
+        <div class="skill-tags">
+          <span class="s-tag">PIV</span><span class="s-tag">SEM</span><span class="s-tag">TGA</span>
+          <span class="s-tag">FTIR</span><span class="s-tag">XRD</span><span class="s-tag">AFM</span>
+          <span class="s-tag">Profilometer</span><span class="s-tag">Goniometer</span>
+          <span class="s-tag">High-Speed Imaging</span><span class="s-tag">Spectroscopy</span>
+          <span class="s-tag">Wind Tunnel</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">🛠️ Design &amp; Prototyping</div>
+        <div class="skill-tags">
+          <span class="s-tag">SolidWorks</span><span class="s-tag">Fusion 360</span>
+          <span class="s-tag">CATIA V5</span><span class="s-tag">3D Printing</span>
+          <span class="s-tag">Laser Cutting</span><span class="s-tag">UAV Design</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">🧪 Systems &amp; Test Engineering</div>
+        <div class="skill-tags">
+          <span class="s-tag">Experimental Design</span><span class="s-tag">Test &amp; Evaluation</span>
+          <span class="s-tag">Data Acquisition</span><span class="s-tag">Engineering Validation</span>
+          <span class="s-tag">FMEA</span><span class="s-tag">Root Cause Analysis</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">🖼️ Imaging &amp; Other Tools</div>
+        <div class="skill-tags">
+          <span class="s-tag">ImageJ</span><span class="s-tag">TrackMate</span>
+          <span class="s-tag">Excel</span><span class="s-tag">Zotero</span>
+          <span class="s-tag">Technical Writing</span><span class="s-tag">Lab Safety</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards" style="background:var(--bg2);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Recognition</div>
+      <h2 class="section-title">Honors &amp; Awards</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="awards-grid fade-in">
+      <div class="award-card"><div class="award-icon">🥉</div><div><div class="award-title">3rd Place · Technical Poster Presentation</div><div class="award-detail">"Impacts of Surface Wettability on Cavitation" among 40 teams · Dept. of Aerospace Engineering, Virginia Tech · Feb 2025</div></div></div>
+      <div class="award-card"><div class="award-icon">🥇</div><div><div class="award-title">Gold Medallist &amp; Department Rank Holder</div><div class="award-detail">Aeronautical Engineering · Rajalakshmi Engineering College · May 2023</div></div></div>
+      <div class="award-card"><div class="award-icon">🏆</div><div><div class="award-title">Best Paper Award · NCRAMS '21</div><div class="award-detail">H2/Air Rotating Detonation Engine paper among 50+ participants · Dec 2021</div></div></div>
+      <div class="award-card"><div class="award-icon">✈️</div><div><div class="award-title">Grade A · NCC Air Wing B-Certificate</div><div class="award-detail">Co-piloted Pipistrel Virus aircraft at Air Force Station Tambaram · Oct 2022</div></div></div>
+      <div class="award-card"><div class="award-icon">🎖️</div><div><div class="award-title">Professor V Ramjee Memorial Prize 2020</div><div class="award-detail">"Enthusiastic Student in Aeronautics" among 250+ students · REC · Sep 2021</div></div></div>
+      <div class="award-card"><div class="award-icon">⭐</div><div><div class="award-title">Merit Rank Holder ×2</div><div class="award-detail">Rajalakshmi Engineering College · 2020 to 2021 and 2021 to 2022</div></div></div>
+      <div class="award-card"><div class="award-icon">🛰️</div><div><div class="award-title">Top Performer · Quark Summer Technical Projects 2021</div><div class="award-detail">Satellite Operating System (CubeSat) · BITS Pilani, Goa · Sep 2021</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Impact Beyond Research</div>
+      <h2 class="section-title">Leadership &amp; Volunteering</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="lead-grid fade-in">
+      <div class="lead-card">
+        <div class="lead-role">Technical Events Lead &amp; Editor</div>
+        <div class="lead-org">SQUADRONE UAV Club, REC</div>
+        <div class="lead-date">Feb 2022 to Sep 2022</div>
+        <div class="lead-desc">Organized webinars, drone workshops, RC competitions, and paper plane challenges to enhance aerospace engagement and hands-on learning among 100+ students.</div>
+      </div>
+      <div class="lead-card">
+        <div class="lead-role">Head of Technical Department &amp; Editor-in-Chief</div>
+        <div class="lead-org">Enactus REC</div>
+        <div class="lead-date">Aug 2020 to Aug 2022</div>
+        <div class="lead-desc">Led 4+ social entrepreneurship projects with a team of 20, organized 5+ events, revamped digital outreach, and edited 3 magazine editions.</div>
+      </div>
+      <div class="lead-card">
+        <div class="lead-role">Student Coordinator &amp; Content Lead</div>
+        <div class="lead-org">RECTRIX Newsletter, REC</div>
+        <div class="lead-date">Dec 2020 to Jul 2022</div>
+        <div class="lead-desc">Content writer and design lead for the Aeronautical Engineering Department's official newsletter, supporting outreach and departmental communication.</div>
+      </div>
+      <div class="lead-card">
+        <div class="lead-role">Student Outreach</div>
+        <div class="lead-org">SEDS · Students for the Exploration and Development of Space, REC</div>
+        <div class="lead-date">Nov 2020 to Feb 2021</div>
+        <div class="lead-desc">Conducted interactive STEM sessions for 30+ students aged 9 to 17 and hosted events to inspire interest in space science and engineering.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" style="background:var(--bg2);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Continuous Learning</div>
+      <h2 class="section-title">Licenses &amp; Certifications</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="certs-grid fade-in">
+      <div class="cert-card" style="border-color: rgba(34,197,94,0.3);">
+        <div class="cert-icon">🌌</div>
+        <div>
+          <div class="cert-name">International Diploma in Astrobiology</div>
+          <div class="cert-issuer">Indian Astrobiology Research Foundation</div>
+          <div class="ongoing-badge">● Ongoing</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🔭</div>
+        <div>
+          <div class="cert-name">Astrobiology and the Search for Extraterrestrial Life</div>
+          <div class="cert-issuer">University of Edinburgh (Coursera) · Aug 2025</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🌊</div>
+        <div>
+          <div class="cert-name">Fluid Dynamics for Astrophysics</div>
+          <div class="cert-issuer">Indian Institute of Science Education and Research (IISER), Pune · May 2022</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">💻</div>
+        <div>
+          <div class="cert-name">Introduction to Programming with MATLAB</div>
+          <div class="cert-issuer">Vanderbilt University · Nov 2020</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🔥</div>
+        <div>
+          <div class="cert-name">Fundamentals of Macroscopic and Microscopic Thermodynamics</div>
+          <div class="cert-issuer">University of Colorado Boulder · Sep 2020</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Contact</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-wrapper fade-in">
+      <p class="contact-intro">
+        Open to research collaborations, industry roles in aerospace/test engineering, and opportunities at the intersection of engineering and planetary science.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:swathigadevic@vt.edu" class="contact-link">
+          <span class="c-icon">✉️</span>
+          <div><div class="c-label">Email</div><div class="c-val">swathigadevic@vt.edu</div></div>
+        </a>
+        <a href="https://linkedin.com/in/swathigadevic" target="_blank" class="contact-link">
+          <span class="c-icon">🔗</span>
+          <div><div class="c-label">LinkedIn</div><div class="c-val">linkedin.com/in/swathigadevic</div></div>
+        </a>
+        <a href="https://drive.google.com/file/d/1CTaGNQdPoAA1d14E0Q_d74FNpEUf65t0/view?usp=sharing" target="_blank" class="contact-link">
+          <span class="c-icon">⭐</span>
+          <div><div class="c-label">Recommendation Letter</div><div class="c-val">Dr. Ravi, NASA Kennedy Space Center</div></div>
+        </a>
+        <div class="contact-link" style="cursor:default;">
+          <span class="c-icon">📍</span>
+          <div><div class="c-label">Location</div><div class="c-val">Blacksburg, Virginia 24060</div></div>
+        </div>
+        <div class="contact-link" style="cursor:default;">
+          <span class="c-icon">📞</span>
+          <div><div class="c-label">Phone</div><div class="c-val">+1 540 558 5824</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Swathiga Devi Chandrasekaran</span> · Aerospace Engineer · Virginia Tech</p>
+  <p style="margin-top:0.4rem; font-size:0.72rem; opacity:0.5;">Built with ❤️ to showcase a journey from Chennai to the stars.</p>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // Stars
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 120; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 2.5 + 0.5;
+    s.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${2+Math.random()*4}s;animation-delay:${Math.random()*4}s;opacity:${Math.random()*0.5+0.1};`;
+    starsEl.appendChild(s);
+  }
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Scroll-to-top
+  const btn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => { btn.classList.toggle('show', window.scrollY > 400); });
+
+  // Active nav
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#'+current ? 'var(--cyan)' : ''; });
+  });
+</script>
+</body>
+</html>
