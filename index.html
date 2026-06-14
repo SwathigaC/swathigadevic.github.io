@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="copyright" content="© 2026 Swathiga Devi Chandrasekaran. All Rights Reserved.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Swathiga Devi Chandrasekaran · Aerospace Engineer</title>
 <style>
@@ -361,6 +362,114 @@
     .stat-item { min-width: 120px; }
     .tl-header { flex-direction: column; }
   }
+
+  /* PAPER LINKS */
+  .paper-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 0.55rem; padding: 0.3rem 0.8rem;
+    background: rgba(240,165,0,0.08); border: 1px solid rgba(240,165,0,0.3);
+    color: var(--gold); border-radius: 5px; font-size: 0.74rem; font-weight: 600;
+    text-decoration: none; transition: background 0.2s, transform 0.2s;
+  }
+  .paper-link:hover { background: rgba(240,165,0,0.18); transform: translateY(-1px); }
+
+  /* GALLERY CAROUSEL */
+  #gallery { background: var(--bg2); }
+  .carousel-wrap { position: relative; -webkit-user-select: none; user-select: none; }
+  .carousel-track-outer {
+    overflow: hidden; border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 40px rgba(0,212,255,0.08);
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+    will-change: transform;
+  }
+  .carousel-slide {
+    min-width: 100%; position: relative;
+    aspect-ratio: 16/9; overflow: hidden; cursor: zoom-in;
+  }
+  .carousel-slide img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.4s ease;
+    -webkit-user-drag: none; user-drag: none; pointer-events: none;
+  }
+  .carousel-slide:hover img { transform: scale(1.03); }
+  .carousel-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(0deg, rgba(8,12,24,0.92) 0%, transparent 100%);
+    padding: 3rem 2rem 1.2rem;
+  }
+  .carousel-caption-title { color: white; font-size: 1.05rem; font-weight: 600; }
+  .carousel-caption-sub { color: var(--cyan); font-size: 0.8rem; margin-top: 0.2rem; }
+  .carousel-arrow {
+    position: absolute; top: 45%; transform: translateY(-50%);
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(8,12,24,0.75); border: 1px solid var(--border);
+    color: white; font-size: 1.6rem;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 10;
+    transition: background 0.2s, border-color 0.2s;
+    backdrop-filter: blur(8px);
+  }
+  .carousel-arrow:hover { background: rgba(0,212,255,0.2); border-color: var(--cyan); }
+  .carousel-arrow.prev { left: 1rem; }
+  .carousel-arrow.next { right: 1rem; }
+  .carousel-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.2rem; }
+  .carousel-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--border); border: 1px solid rgba(0,212,255,0.3);
+    cursor: pointer; transition: all 0.25s;
+  }
+  .carousel-dot.active {
+    background: var(--cyan); border-color: var(--cyan);
+    box-shadow: 0 0 8px rgba(0,212,255,0.6);
+    width: 24px; border-radius: 4px;
+  }
+  .carousel-slide::after {
+    content: '\00a9 Swathiga Devi Chandrasekaran';
+    position: absolute; bottom: 0.6rem; right: 0.8rem;
+    font-size: 0.55rem; color: rgba(255,255,255,0.3);
+    pointer-events: none; letter-spacing: 0.3px;
+  }
+  .carousel-track, .carousel-slide {
+    -webkit-user-select: none; -moz-user-select: none; user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  /* LIGHTBOX */
+  .lightbox {
+    display: none; position: fixed; inset: 0; z-index: 999;
+    background: rgba(8,12,24,0.95); align-items: center; justify-content: center; padding: 2rem;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 10px; border: 1px solid var(--border); box-shadow: 0 0 60px rgba(0,212,255,0.2); object-fit: contain; }
+  .lightbox-caption { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); text-align: center; color: white; font-size: 0.95rem; }
+  .lightbox-caption span { color: var(--cyan); display: block; font-size: 0.8rem; margin-top: 0.2rem; }
+  .lb-close { position: absolute; top: 1.5rem; right: 2rem; font-size: 2.5rem; color: var(--muted); cursor: pointer; line-height: 1; transition: color 0.2s; user-select: none; }
+  .lb-close:hover { color: white; }
+  .lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--muted); cursor: pointer; background: rgba(17,24,39,0.7); border: 1px solid var(--border); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.2s; user-select: none; }
+  .lb-prev:hover, .lb-next:hover { color: var(--cyan); border-color: var(--cyan); }
+  .lb-prev { left: 1.5rem; }
+  .lb-next { right: 1.5rem; }
+
+  /* COPYRIGHT BAR */
+  .copyright-bar {
+    text-align: center; padding: 0.6rem 2rem;
+    background: rgba(0,212,255,0.04); border-top: 1px solid var(--border);
+    font-size: 0.72rem; color: var(--muted); letter-spacing: 0.3px;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem; }
+    .nav-links { display: none; }
+    .about-grid, .edu-grid { grid-template-columns: 1fr; }
+    .stat-item { min-width: 120px; }
+    .tl-header { flex-direction: column; }
+    .carousel-arrow { width: 38px; height: 38px; font-size: 1.2rem; }
+  }
+
 </style>
 </head>
 <body>
@@ -376,6 +485,7 @@
     <li><a href="#publications">Publications</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#awards">Awards</a></li>
+    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -390,7 +500,7 @@
     <p class="hero-title">MS Aerospace Engineering · Virginia Tech · GPA 3.87/4.00</p>
     <p class="hero-desc">
       Fluid dynamics researcher with experimental expertise in cavitation, PIV, CFD, and advanced
-      materials characterization. Bridging aerospace engineering with planetary science —
+      materials characterization. Bridging aerospace engineering with planetary science  · 
       from Earth's fluid flows to questions about life beyond our planet.
     </p>
     <div class="hero-btns">
@@ -438,7 +548,7 @@
           completing my Master's thesis on <strong style="color:var(--cyan)">Effects of Surface Wettability on Cavitation Inception &amp; Cloud Cavitation</strong> at Virginia Tech's CREATe lab.
         </p>
         <p>
-          My work sits at the intersection of fluid dynamics, materials science, and data-driven analysis —
+          My work sits at the intersection of fluid dynamics, materials science, and data-driven analysis  · 
           using tools like PIV, SEM, FTIR, XRD, and machine learning to uncover how physical surfaces
           govern complex flow behavior.
         </p>
@@ -687,7 +797,7 @@
           <div class="tl-org">Brahmastra Aerospace Systems</div>
           <ul class="tl-points">
             <li>Conducted a literature survey on space debris mitigation methods utilizing 1U CubeSats.</li>
-            <li>Generated the concept of Retractable Dragsails in 1U CubeSats for precise atmospheric reentry, forming the basis of the RE-TRANS project — a passive deorbiting solution for LEO CubeSats.</li>
+            <li>Generated the concept of Retractable Dragsails in 1U CubeSats for precise atmospheric reentry, forming the basis of the RE-TRANS project · a passive deorbiting solution for LEO CubeSats.</li>
           </ul>
           <div class="skills-row">
             <span class="skill-chip">Orbital Mechanics</span>
@@ -824,7 +934,7 @@
         <div>
           <div class="pub-title">Design and Analysis of a Thermoacoustic Cooling System with Two-Stack Arrangement for Different Types of Stacks</div>
           <div class="pub-authors">M. Siva Sakthi, C. Swathiga Devi &amp; Surendra Bogadi</div>
-          <div class="pub-venue">Advances in Mechanical Engineering and Material Science (ICAMEMS 2023), Lecture Notes in Mechanical Engineering, pp. 69–84. Springer, Singapore. DOI: 10.1007/978-981-99-5613-5_6 <span class="pub-tag">Springer</span></div>
+          <div class="pub-venue">Advances in Mechanical Engineering and Material Science (ICAMEMS 2023), Lecture Notes in Mechanical Engineering, pp. 69 to 84. Springer, Singapore. DOI: 10.1007/978-981-99-5613-5_6 <span class="pub-tag">Springer</span><br><a href="https://doi.org/10.1007/978-981-99-5613-5_6" target="_blank" rel="noopener" class="paper-link">📖 Read Paper</a></div>
         </div>
       </div>
     </div>
@@ -836,7 +946,7 @@
         <div>
           <div class="pub-title">Space Entrepreneurship: A Comprehensive Guide to Launching a Space Business in India</div>
           <div class="pub-authors">Lokesh Kumar G, Swathiga Devi Chandrasekaran, et al.</div>
-          <div class="pub-venue">75th International Astronautical Congress (IAC 2024), pp. 633–644. IAF. Milan, Italy. DOI: 10.52202/078383-0059 <span class="pub-tag" style="color:var(--purple);border-color:rgba(124,92,191,0.3);background:rgba(124,92,191,0.1);">IAC 2024</span></div>
+          <div class="pub-venue">75th International Astronautical Congress (IAC 2024), pp. 633 to 644. IAF. Milan, Italy. DOI: 10.52202/078383-0059 <span class="pub-tag" style="color:var(--purple);border-color:rgba(124,92,191,0.3);background:rgba(124,92,191,0.1);">IAC 2024</span><br><a href="https://doi.org/10.52202/078383-0059" target="_blank" rel="noopener" class="paper-link">📖 Read Paper</a></div>
         </div>
       </div>
       <div class="pub-card">
@@ -1030,6 +1140,45 @@
   </div>
 </section>
 
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Moments That Define Me</div>
+      <h2 class="section-title">Highlights &amp; Accomplishments</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="carousel-wrap fade-in">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide" onclick="openLightbox(0)"><img src="photos/honouring-bright-minds.jpg" alt="Times of India" loading="lazy"><div class="carousel-caption"><div class="carousel-caption-title">Featured in Times of India · "Honouring Bright Minds"</div><div class="carousel-caption-sub">Gold Medal Recipient · Rajalakshmi Engineering College, 2023</div></div></div>
+          <div class="carousel-slide" onclick="openLightbox(1)"><img src="photos/create-poster-competition.jpg" alt="CREATe Poster" loading="lazy"><div class="carousel-caption"><div class="carousel-caption-title">3rd Place · CREATe Symposium Poster Competition</div><div class="carousel-caption-sub">Virginia Tech · Hydrophobicity &amp; Cavitation Research</div></div></div>
+          <div class="carousel-slide" onclick="openLightbox(2)"><img src="photos/aps-dfd-2025-team.jpg" alt="APS DFD 2025 Team" loading="lazy"><div class="carousel-caption"><div class="carousel-caption-title">APS DFD 2025 · Research Team</div><div class="carousel-caption-sub">Division of Fluid Dynamics · CREATe Lab, Virginia Tech</div></div></div>
+          <div class="carousel-slide" onclick="openLightbox(3)"><img src="photos/cavitation-presentation.jpg" alt="Cavitation Presentation" loading="lazy"><div class="carousel-caption"><div class="carousel-caption-title">Presenting Cavitation Research</div><div class="carousel-caption-sub">Graduate Research Presentation · Virginia Tech</div></div></div>
+          <div class="carousel-slide" onclick="openLightbox(4)"><img src="photos/vt-lab-research.jpg" alt="Materials Characterization Lab" loading="lazy"><div class="carousel-caption"><div class="carousel-caption-title">Materials Characterization Lab Research Work</div><div class="carousel-caption-sub">Surface Characterization Work · Virginia Tech</div></div></div>
+          <div class="carousel-slide" onclick="openLightbox(5)"><img src="photos/cavitation-lab.jpg" alt="Lab Work" loading="lazy"><div class="carousel-caption"><div class="carousel-caption-title">Hands-On Laboratory Research</div><div class="carousel-caption-sub">Experimental Fluid Dynamics · Virginia Tech</div></div></div>
+          <div class="carousel-slide" onclick="openLightbox(6)"><img src="photos/venkatraman-prize.jpg" alt="Enthusiastic Student Award" loading="lazy"><div class="carousel-caption"><div class="carousel-caption-title">Enthusiastic Student in Aeronautics Award</div><div class="carousel-caption-sub">Rajalakshmi Engineering College · 2020</div></div></div>
+          <div class="carousel-slide" onclick="openLightbox(7)"><img src="photos/ncc-aircraft.jpg" alt="NCC Flight" loading="lazy"><div class="carousel-caption"><div class="carousel-caption-title">NCC Air Wing · Flight Training</div><div class="carousel-caption-sub">National Cadet Corps · Certified Pilot Cadet</div></div></div>
+          <div class="carousel-slide" onclick="openLightbox(8)"><img src="photos/iit-kanpur-flight-lab.jpg" alt="IIT Kanpur" loading="lazy"><div class="carousel-caption"><div class="carousel-caption-title">Flight Laboratory · IIT Kanpur</div><div class="carousel-caption-sub">Indian Institute of Technology Kanpur · Summer Research</div></div></div>
+        </div>
+      </div>
+      <button class="carousel-arrow prev" onclick="carouselMove(-1)">&#8249;</button>
+      <button class="carousel-arrow next" onclick="carouselMove(1)">&#8250;</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+  <span class="lb-close" onclick="closeLightbox()">&#x2715;</span>
+  <span class="lb-prev" onclick="lbNav(-1)">&#8249;</span>
+  <img id="lb-img" src="" alt="">
+  <span class="lb-next" onclick="lbNav(1)">&#8250;</span>
+  <div class="lightbox-caption"><div id="lb-title"></div><span id="lb-sub"></span></div>
+</div>
+
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
@@ -1059,15 +1208,12 @@
           <span class="c-icon">📍</span>
           <div><div class="c-label">Location</div><div class="c-val">Blacksburg, Virginia 24060</div></div>
         </div>
-        <div class="contact-link" style="cursor:default;">
-          <span class="c-icon">📞</span>
-          <div><div class="c-label">Phone</div><div class="c-val">+1 540 558 5824</div></div>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
+<div class="copyright-bar">© 2026 Swathiga Devi Chandrasekaran. All Rights Reserved. Unauthorized reproduction or distribution of any content, images, or materials from this website is strictly prohibited.</div>
 <footer>
   <p>© 2026 <span>Swathiga Devi Chandrasekaran</span> · Aerospace Engineer · Virginia Tech</p>
   <p style="margin-top:0.4rem; font-size:0.72rem; opacity:0.5;">Built with ❤️ to showcase a journey from Chennai to the stars.</p>
@@ -1104,6 +1250,67 @@
     sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
     navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#'+current ? 'var(--cyan)' : ''; });
   });
+
+  // ── Carousel ─────────────────────────────────────────
+  var carouselIndex = 0, carouselTotal = 9;
+  var carouselTrackEl, isDragging = false, startX = 0, dragDelta = 0;
+  function buildDots() {
+    var dots = document.getElementById('carouselDots'); dots.innerHTML = '';
+    for (var i = 0; i < carouselTotal; i++) {
+      var d = document.createElement('div');
+      d.className = 'carousel-dot' + (i===0?' active':'');
+      (function(idx){ d.onclick = function(){ carouselGoTo(idx); }; })(i);
+      dots.appendChild(d);
+    }
+  }
+  function updateDots() {
+    document.querySelectorAll('.carousel-dot').forEach(function(d,i){ d.classList.toggle('active',i===carouselIndex); });
+  }
+  function carouselGoTo(i) {
+    carouselIndex = (i + carouselTotal) % carouselTotal;
+    carouselTrackEl.style.transform = 'translateX(-'+(carouselIndex*100)+'%)';
+    updateDots();
+  }
+  function carouselMove(dir){ carouselGoTo(carouselIndex+dir); }
+  document.addEventListener('DOMContentLoaded', function(){
+    carouselTrackEl = document.getElementById('carouselTrack');
+    buildDots();
+    carouselTrackEl.addEventListener('mousedown', function(e){ isDragging=true; startX=e.clientX; carouselTrackEl.style.transition='none'; });
+    carouselTrackEl.addEventListener('touchstart', function(e){ isDragging=true; startX=e.touches[0].clientX; carouselTrackEl.style.transition='none'; },{passive:true});
+    carouselTrackEl.addEventListener('mousemove', function(e){ if(!isDragging)return; dragDelta=e.clientX-startX; carouselTrackEl.style.transform='translateX(calc(-'+(carouselIndex*100)+'% + '+dragDelta+'px))'; });
+    carouselTrackEl.addEventListener('touchmove', function(e){ if(!isDragging)return; dragDelta=e.touches[0].clientX-startX; carouselTrackEl.style.transform='translateX(calc(-'+(carouselIndex*100)+'% + '+dragDelta+'px))'; },{passive:true});
+    function endDrag(){ if(!isDragging)return; isDragging=false; carouselTrackEl.style.transition=''; if(dragDelta< -60)carouselMove(1); else if(dragDelta>60)carouselMove(-1); else carouselGoTo(carouselIndex); dragDelta=0; }
+    carouselTrackEl.addEventListener('mouseup',endDrag);
+    carouselTrackEl.addEventListener('mouseleave',endDrag);
+    carouselTrackEl.addEventListener('touchend',endDrag);
+  });
+  // ── Lightbox ──────────────────────────────────────────
+  var lbPhotos = [
+    {src:'photos/honouring-bright-minds.jpg',title:'Featured in Times of India · Honouring Bright Minds',sub:'Gold Medal Recipient · Rajalakshmi Engineering College, 2023'},
+    {src:'photos/create-poster-competition.jpg',title:'3rd Place · CREATe Symposium Poster Competition',sub:'Virginia Tech · Hydrophobicity & Cavitation Research'},
+    {src:'photos/aps-dfd-2025-team.jpg',title:'APS DFD 2025 · Research Team',sub:'Division of Fluid Dynamics · CREATe Lab, Virginia Tech'},
+    {src:'photos/cavitation-presentation.jpg',title:'Presenting Cavitation Research',sub:'Graduate Research Presentation · Virginia Tech'},
+    {src:'photos/vt-lab-research.jpg',title:'Materials Characterization Lab Research Work',sub:'Surface Characterization Work · Virginia Tech'},
+    {src:'photos/cavitation-lab.jpg',title:'Hands-On Laboratory Research',sub:'Experimental Fluid Dynamics · Virginia Tech'},
+    {src:'photos/venkatraman-prize.jpg',title:'Enthusiastic Student in Aeronautics Award',sub:'Rajalakshmi Engineering College · 2020'},
+    {src:'photos/ncc-aircraft.jpg',title:'NCC Air Wing · Flight Training',sub:'National Cadet Corps · Certified Pilot Cadet'},
+    {src:'photos/iit-kanpur-flight-lab.jpg',title:'Flight Laboratory · IIT Kanpur',sub:'Indian Institute of Technology Kanpur · Summer Research'}
+  ];
+  var lbIndex = 0;
+  function openLightbox(i){ lbIndex=i; var p=lbPhotos[i]; document.getElementById('lb-img').src=p.src; document.getElementById('lb-title').textContent=p.title; document.getElementById('lb-sub').textContent=p.sub; document.getElementById('lightbox').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
+  function closeLightboxOnBg(e){ if(e.target===document.getElementById('lightbox'))closeLightbox(); }
+  function lbNav(dir){ lbIndex=(lbIndex+dir+lbPhotos.length)%lbPhotos.length; openLightbox(lbIndex); }
+  // ── Copyright Protection ──────────────────────────────
+  document.addEventListener('contextmenu',function(e){ if(e.target.tagName==='IMG'||e.target.closest('.carousel-slide')||e.target.closest('.lightbox')){ e.preventDefault(); return false; } });
+  document.addEventListener('dragstart',function(e){ if(e.target.tagName==='IMG'){ e.preventDefault(); return false; } });
+  document.addEventListener('keydown',function(e){
+    if(document.getElementById('lightbox').classList.contains('open')){ if(e.key==='Escape')closeLightbox(); if(e.key==='ArrowLeft')lbNav(-1); if(e.key==='ArrowRight')lbNav(1); return; }
+    if(e.key==='ArrowLeft')carouselMove(-1);
+    if(e.key==='ArrowRight')carouselMove(1);
+  });
+  document.querySelectorAll('img').forEach(function(img){ img.setAttribute('draggable','false'); });
+
 </script>
 </body>
 </html>
